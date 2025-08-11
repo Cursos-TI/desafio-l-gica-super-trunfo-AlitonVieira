@@ -67,8 +67,8 @@ int main() {
     float percapta2 = (float)(pib2 * 1000000000.0f) / populacao2; //variavel para pib per capta carta 2
 
     //declarando variáveis de super poder
-    float super_poder1 = populacao1 + area1 + pib1 + pontos1 + densidade1 + (1.0f / densidade1);
-    float super_poder2 = populacao2 + area2 + pib2 + pontos2 + densidade2 + (1.0f / densidade2);
+    float super_poder1 = (double)populacao1 + (double)area1 + (pib1 * 1000000000.0) + (double)pontos1 + (double)densidade1 + (1.0f / (double)densidade1);
+    float super_poder2 = (double)populacao2 + (double)area2 + (pib2 * 1000000000.0) + (double)pontos2 + (double)densidade2 + (1.0f / (double)densidade2);
 
         //Mostrando os dados das cartas cadastradas
     //Carta 1
@@ -156,6 +156,7 @@ int main() {
     }
 
     printf("\n###COMPARANDO ATRIBUTOS###\n");
+    printf("Escolha um atributo *DIFERENTE* do primeiro ou o jogo será encerrado!\n");
     printf("Ecolha a segunda opção:\n");
     printf("1. População\n");
     printf("2. Área\n");
@@ -214,9 +215,9 @@ int main() {
     //mostrando resultado
     printf("\nRESULTADO\n");
     if (resultado1 && !resultado2){
-        printf("Carta 2 Venceu!\n");
+        printf("Carta 1 Venceu!\n");
     }else if (!resultado1 && resultado2){
-        printf("Carta 1 Venceu\n");
+        printf("Carta 2 Venceu\n");
     }else {
         printf("EMPATE!\n");
     }
